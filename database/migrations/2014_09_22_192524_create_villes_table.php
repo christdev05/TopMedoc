@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('villes', function (Blueprint $table) {
             $table->id();
             $table->string('lib_ville');
-            $table->string('code_pays');
             $table->foreignId("departement_id")->constrained();
             $table->timestamps();
         });
