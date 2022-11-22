@@ -122,6 +122,7 @@
                                             {{--<span class="old-price">{{$product->regulare_price}}</span>--}}
                                         </div>
                                         <div class="product-action-1 show">
+                
                                             <a aria-label="Add To Cart" class="action-btn hover-up" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})" href="#"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
@@ -163,12 +164,6 @@
                                             {{--<span class="old-price">{{$product->regulare_price}}</span>--}}
                                         </div>
                                         <div class="product-action-1 show">
-                                            @if ($witems->contains($lproduct->id))
-                                                <a aria-label="Retirer de la liste de souhaits" class="action-btn hover-up wishlisted" href="#" wire:click.prevent="removefromWishlist({{$product->id}})"><i class="fi-rs-heart"></i></a>
-                                            @else
-                                                <a aria-label="Ajouter à la liste de souhaits" class="action-btn hover-up" href="#" wire:click.prevent="addToWishlist({{$lproduct->id}},'{{$lproduct->name}}',{{$lproduct->regular_price}})"><i class="fi-rs-heart"></i></a>
-                                            @endif
-                                
                                             <a aria-label="Ajouter au panier" class="action-btn hover-up" wire:click.prevent="store({{$lproduct->id}},'{{$lproduct->name}}',{{$lproduct->regular_price}})" href="#"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
@@ -210,12 +205,6 @@
                                             {{--<span class="old-price">{{$product->regulare_price}}</span>--}}
                                         </div>
                                         <div class="product-action-1 show">
-                                            @if ($witems->contains($nproduct->id))
-                                                <a aria-label="Retirer de la liste de souhaits" class="action-btn hover-up wishlisted" href="#" wire:click.prevent="removefromWishlist({{$product->id}})"><i class="fi-rs-heart"></i></a>
-                                            @else
-                                                <a aria-label="Ajouter à la liste de souhaits" class="action-btn hover-up" href="#" wire:click.prevent="addToWishlist({{$nproduct->id}},'{{$nproduct->name}}',{{$nproduct->regular_price}})"><i class="fi-rs-heart"></i></a>
-                                            @endif
-                                
                                             <a aria-label="Ajouter au panier" class="action-btn hover-up" wire:click.prevent="store({{$nproduct->id}},'{{$nproduct->name}}',{{$nproduct->regular_price}})" href="#"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
@@ -313,12 +302,6 @@
                                     </a>
                                 </div>
                                 <div class="product-action-1">
-                                    @if ($witems->contains($nproduct->id))
-                                        <a aria-label="Retirer de la liste de souhaits" class="action-btn hover-up wishlisted" href="#" wire:click.prevent="removefromWishlist({{$product->id}})"><i class="fi-rs-heart"></i></a>
-                                    @else
-                                        <a aria-label="Ajouter à la liste de souhaits" class="action-btn hover-up" href="#" wire:click.prevent="addToWishlist({{$nproduct->id}},'{{$nproduct->name}}',{{$nproduct->regular_price}})"><i class="fi-rs-heart"></i></a>
-                                    @endif
-                                
                                     <a aria-label="Ajouter au panier" class="action-btn hover-up" wire:click.prevent="store({{$nproduct->id}},'{{$nproduct->name}}',{{$nproduct->regular_price}})" href="#"><i class="fi-rs-shopping-bag-add"></i></a>
                                 </div>
                                 <div class="product-badges product-badges-position product-badges-mrg">
