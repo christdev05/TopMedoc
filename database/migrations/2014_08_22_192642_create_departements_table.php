@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('departements', function (Blueprint $table) {
             $table->id();
             $table->text('libele_departement');
+            $table->foreignId("pays_id")->constrained();
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -27,6 +29,9 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('departements', function (Blueprint $table) {
+            $table->dropForeign("id_departement");
+        });
         Schema::dropIfExists('departements');
     }
 };
